@@ -27,9 +27,9 @@ else:
     if computador == 0 and jogador == 0:
         print('EMPATE')
     elif computador == 0 and jogador == 1:
-        print('COMPUTADOR VENCE')
-    elif computador == 0 and jogador == 2:
         print('JOGADOR VENCE')
+    elif computador == 0 and jogador == 2:
+        print('COMPUTADOR VENCE')
 
 
     if computador == 1 and jogador == 0:
