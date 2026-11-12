@@ -1,0 +1,113 @@
+
+from time import sleep
+
+calabresa = frango = presunto = 0
+
+calabresa = int(input('Quantas pizzas de calabresa possuímos atualmente? '))
+frango = int(input('Quantas pizzas de frango possuímos atualmente? '))
+presunto = int(input('Quantas pizzas de presunto possuímos atualmente? '))
+
+while True:
+    print('''Escolha uma das opções:
+    [1] Conferir estoque.
+    [2] Adicionar pizzas ao estoque.
+    [3] Retirar pizzas do estoque.
+    [4] Encerrar''')
+    sleep(1)
+
+    escolha = int(input('O que você deseja fazer? '))
+
+    if escolha == 1:
+        print('-=' * 15)
+        print('Temos em estoque:')
+        print(f'''Calabresa - {calabresa}
+Frango - {frango}
+Presunto - {presunto}''')
+        print('-=' * 15)
+        sleep(1)
+
+    elif escolha == 2:
+        print('''Deseja adicionar pizzas de:
+        [1] Calabresa
+        [2] Frango
+        [3] Presunto''')
+        sleep(1)
+
+        escolha2 = int(input('Qual pizza deseja adicionar ao estoque? '))
+
+        if escolha2 == 1:
+            quantidade = int(input('Quantidade de pizzas de Calabresa a serem adicionadas: '))
+            if quantidade > 0:
+                calabresa += quantidade
+            else:
+                print('Digite um número positivo.')
+
+        elif escolha2 == 2:
+            quantidade = int(input('Quantidade de pizzas de frango a serem adicionadas: '))
+            if quantidade > 0:
+                frango += quantidade
+            else:
+                print('Digite uma quantidade positiva.')
+
+        elif escolha2 == 3:
+            quantidade = int(input('Quantidade de pizzas de presunto a serem adicionadas: '))
+            if quantidade > 0:
+                presunto += quantidade
+            else:
+                print('Digite um número positivo.')
+
+        else:
+            print('Digite uma opção válida.')
+
+    elif escolha == 3:
+        print('''Qual pizza você deseja retirar do estoque?
+        [1] Calabresa
+        [2] Frango
+        [3] Presunto''')
+        sleep(1)
+
+        escolha3 = int(input('Escolha uma das opções acima para retirar estoque: '))
+
+        if escolha3 == 1:
+            retirar = int(input('Quantas pizzas de calabresa você pretende retirar? '))
+            if retirar > 0:
+                if retirar <= calabresa:
+                    calabresa -= retirar
+                    print('Retirada realizada com sucesso!')
+                else:
+                    print('Estoque insuficiente!')
+            else:
+                print('Digite uma quantidade positiva.')
+
+        elif escolha3 == 2:
+            retirar = int(input('Quantas pizzas de frango você pretende retirar? '))
+            if retirar > 0:
+                if retirar <= frango:
+                    frango -= retirar
+                    print('Retirada realizada com sucesso!')
+                else:
+                    print('Estoque insuficiente!')
+            else:
+                print('Digite uma quantidade positiva.')
+
+        elif escolha3 == 3:
+            retirar = int(input('Quantas pizzas de presunto você pretende retirar? '))
+            if retirar > 0:
+                if retirar <= presunto:
+                    presunto -= retirar
+                    print('Retirada realizada com sucesso!')
+                else:
+                    print('Estoque insuficiente!')
+            else:
+                print('Digite uma quantidade positiva.')
+
+        else:
+            print('Digite uma opção válida.')
+
+    elif escolha == 4:
+        print('Encerrando...')
+        sleep(1)
+        break
+
+    else:
+        print('Opção inválida, escolha uma das alternativas acima.')
